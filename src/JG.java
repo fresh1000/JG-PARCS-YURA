@@ -8,10 +8,14 @@ import parcs.*;
 
 public class JG implements AM{
 	public static void main(String[] args) {
+		long startTime = System.nanoTime();
 		task curtask = new task();
         curtask.addJarFile("JG.jar");
         (new JG()).run(new AMInfo(curtask, (channel)null));
         curtask.end();
+        long endTime   = System.nanoTime();
+		long totalTime = endTime - startTime;
+		System.out.println("Total time: " + totalTime);
 	}
 	
 	public void run(AMInfo info) {
